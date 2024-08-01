@@ -12,7 +12,7 @@ export async function POST(req) {
   const { email, password } = await req.json();
 
   const client = await clientPromise;
-  const db = client.db('solera'); // Nombre de tu base de datos
+  const db = client.db('marketplace'); // Nombre de tu base de datos
   const usersCollection = db.collection('users');
 
   const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);

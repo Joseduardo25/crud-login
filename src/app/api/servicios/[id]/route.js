@@ -4,7 +4,7 @@ import { ObjectId } from 'mongodb';
 
 export async function PUT(req, { params }) {
   const client = await clientPromise;
-  const db = client.db('solera');
+  const db = client.db('marketplace');
   const body = await req.json();
 
   if (!ObjectId.isValid(params.id)) {
@@ -39,7 +39,7 @@ export async function PUT(req, { params }) {
 
 export async function DELETE(req, { params }) {
   const client = await clientPromise;
-  const db = client.db('solera');
+  const db = client.db('marketplace');
 
   if (!ObjectId.isValid(params.id)) {
     return NextResponse.json({ error: 'ID inválido' }, { status: 400 });

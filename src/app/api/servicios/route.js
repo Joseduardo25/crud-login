@@ -4,7 +4,7 @@ import { ObjectId } from 'mongodb';
 
 export async function GET(req) {
   const client = await clientPromise;
-  const db = client.db('solera');
+  const db = client.db('marketplace');
   const { searchParams } = new URL(req.url);
   const categoria = searchParams.get('categoria');
 
@@ -20,7 +20,7 @@ export async function GET(req) {
 
 export async function POST(req) {
   const client = await clientPromise;
-  const db = client.db('solera');
+  const db = client.db('marketplace');
   const body = await req.json();
 
   if (!body.nombre || !body.descripcion || !body.categoria) {
